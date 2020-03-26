@@ -7,7 +7,7 @@ const userPinsDiv = $('#userPins');
 const logoutButton = $('#logout-button');
 
 const checkLoginStatus = () => {
-  firebase.auth.onAuthStateChanged((user) => {
+  firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       authDiv.addClass('hide');
       boardDiv.removeClass('hide');
