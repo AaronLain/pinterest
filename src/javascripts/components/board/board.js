@@ -6,10 +6,8 @@ const buildPins = () => {
   pinData.getPins()
     .then((pins) => {
       let domString = '';
-      domString += '<h2 style="text-align: center;">Board</h2>';
-      domString += '<div class="d-flex flex-wrap">';
+      domString += '<div class="d-flex flex-wrap" style="margin-left: 2rem;">';
       pins.forEach((pin) => {
-        if()
         domString += pinComponent.pinMaker(pin);
       });
       domString += '</div>';
@@ -18,5 +16,6 @@ const buildPins = () => {
     })
     .catch((err) => console.error('getPins broken', err));
 };
+
 
 export default { buildPins };
