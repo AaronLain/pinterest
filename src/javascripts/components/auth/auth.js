@@ -14,4 +14,14 @@ const loginButton = () => {
   $('#google-auth').click(signMeIn);
 };
 
-export default { loginButton };
+const boardButtons = () => {
+  let domString = '';
+  domString += '<button id="All" class="btn btn-primary">All Boards</button>';
+  domString += '<button id="dessert" class="btn btn-danger">Dessert Board</button>';
+  domString += '<button id="vegetable" class="btn btn-success">Veggie Board</button>';
+  domString += '<button id="cereal" class="btn btn-warning">Cereal Board</button>';
+
+  utils.printToDom('button-row', domString);
+};
+
+export default { loginButton, boardButtons };
