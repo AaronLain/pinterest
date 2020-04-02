@@ -23,9 +23,7 @@ const buildPins = (type) => {
 
 const printSelectedBoard = (e) => {
   const buttonId = e.target.id;
-  console.error(buttonId);
   buildPins(buttonId);
 };
-
 
 export default { buildPins, printSelectedBoard };
