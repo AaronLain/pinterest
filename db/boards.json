@@ -1,0 +1,18 @@
+{
+  "board1": {
+    "name": "dessert",
+    "pins": []
+  },
+  "board2": {
+    "name": "vegetable",
+    "pins": []
+  },
+  "board3": {
+    "name": "cereal",
+    "pins": []
+  },
+  "board4": {
+    "name": "all",
+    "pins": []
+  }
+}
