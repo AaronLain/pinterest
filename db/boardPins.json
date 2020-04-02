@@ -1,98 +1,86 @@
 {
   "boardPin1":{
     "pinId":"pin1",
-    "boardId":""
+    "boardId":"dessert"
   },
   "boardPin2":{
     "pinId":"pin2",
-    "boardId":""
+    "boardId":"dessert"
   },
   "boardPin3":{
     "pinId":"pin3",
-    "boardId":""
+    "boardId":"dessert"
   },
   "boardPin4":{
     "pinId":"pin4",
-    "boardId":""
+    "boardId":"dessert"
   },
   "boardPin5":{
     "pinId":"pin5",
-    "boardId":""
+    "boardId":"dessert"
   },
   "boardPin6":{
     "pinId":"pin6",
-    "boardId":""
+    "boardId":"dessert"
   },
   "boardPin7":{
     "pinId":"pin7",
-    "boardId":""
+    "boardId":"dessert"
   },
   "boardPin8":{
     "pinId":"pin8",
-    "boardId":""
+    "boardId":"vegetable"
   },
   "boardPin9":{
     "pinId":"pin9",
-    "boardId":""
+    "boardId":"vegetable"
   },
   "boardPin10":{
     "pinId":"pin10",
-    "boardId":""
+    "boardId":"vegetable"
   },
   "boardPin11":{
     "pinId":"pin11",
-    "boardId":""
+    "boardId":"vegetable"
   },
   "boardPin12":{
     "pinId":"pin12",
-    "boardId":""
+    "boardId":"vegetable"
   },
   "boardPin13":{
     "pinId":"pin13",
-    "boardId":""
+    "boardId":"vegetable"
   },
   "boardPin14":{
     "pinId":"pin14",
-    "boardId":""
+    "boardId":"vegetable"
   },
   "boardPin15":{
     "pinId":"pin15",
-    "boardId":""
+    "boardId":"cereal"
   },
   "boardPin16":{
     "pinId":"pin16",
-    "boardId":""
+    "boardId":"cereal"
   },
   "boardPin17":{
     "pinId":"pin17",
-    "boardId":""
+    "boardId":"cereal"
   },
   "boardPin18":{
     "pinId":"pin18",
-    "boardId":""
+    "boardId":"cereal"
   },
   "boardPin19":{
     "pinId":"pin19",
-    "boardId":""
+    "boardId":"cereal"
   },
   "boardPin20":{
     "pinId":"pin20",
-    "boardId":""
+    "boardId":"cereal"
   },
   "boardPin21":{
     "pinId":"pin21",
-    "boardId":""
-  },
-  "boardPin22":{
-    "pinId":"pin1",
-    "boardId":""
-  },
-  "boardPin23":{
-    "pinId":"pin6",
-    "boardId":""
-  },
-  "boardPin24":{
-    "pinId":"pin13",
-    "boardId":""
+    "boardId":"cereal"
   }
 }
