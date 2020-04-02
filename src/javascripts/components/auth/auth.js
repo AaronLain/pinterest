@@ -16,7 +16,7 @@ const loginButton = () => {
 
 const boardButtons = () => {
   let domString = '';
-  domString += '<button id="all" class="board-button btn btn-primary">All Boards</button>';
+  domString += '<button id="all" class="board-button btn btn-primary">All My Boards</button>';
   domString += '<button id="dessert" class="board-button btn btn-danger">Dessert Board</button>';
   domString += '<button id="vegetable" class="board-button btn btn-success">Veggie Board</button>';
   domString += '<button id="cereal" class="board-button btn btn-warning">Cereal Board</button>';
