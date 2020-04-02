@@ -16,16 +16,14 @@ const buildPins = (type) => {
       });
       domString += '</div>';
       utils.printToDom('board', domString);
-      // $('body').on('click', '.delete-pin', removePin);
+      $('body').on('click', '.delete-pin', removePin);
     })
     .catch((err) => console.error('getPins broken', err));
 };
 
 const printSelectedBoard = (e) => {
   const buttonId = e.target.id;
-  console.error(buttonId);
   buildPins(buttonId);
 };
-
 
 export default { buildPins, printSelectedBoard };
