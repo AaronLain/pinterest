@@ -1,5 +1,5 @@
 {
   "pins":"something",
-  "userPins":"anotherthing",
-  "users": "wat"
+  "boardPins":"anotherthing",
+  "boards": "wat"
 }

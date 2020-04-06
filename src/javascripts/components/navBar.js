@@ -5,6 +5,7 @@ const logoutEvent = () => {
   $('#logout-button').click((e) => {
     e.preventDefault();
     firebase.auth().signOut();
+    $('#button-row').empty();
   });
 };
 
