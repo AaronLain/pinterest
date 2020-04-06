@@ -4,6 +4,7 @@ import apiKeys from '../apiKeys.json';
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
 const getPins = () => new Promise((resolve, reject) => {
+  console.error('axios get', `${baseUrl}/pins.json`);
   axios.get(`${baseUrl}/pins.json`)
     .then((response) => {
       const zePins = response.data;
@@ -15,9 +16,10 @@ const getPins = () => new Promise((resolve, reject) => {
           pins.push(zePins[pinId]);
         });
       }
+      console.error(pins, 'pins in getPins');
       resolve(pins);
     })
-    .catch((err) => reject(err));
+    .catch((err) => console.error('get Pins broke', reject(err)));
 });
 
 // const deletePin = (pinId) => axios.delete(`${baseUrl}/pins/${pinId}.json`);
