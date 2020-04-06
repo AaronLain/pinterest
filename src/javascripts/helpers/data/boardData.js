@@ -3,7 +3,7 @@ import apiKeys from '../apiKeys.json';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
-const getBoards= () => new Promise((resolve, reject) => {
+const getBoards = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/boards.json`)
     .then((response) => {
       const zeBoards = response.data;
@@ -12,9 +12,11 @@ const getBoards= () => new Promise((resolve, reject) => {
         zeBoards[boardId].id = boardId;
         boards.push(zeBoards[boardId]);
       });
-      resolve(boards)
+      resolve(boards);
     })
     .catch((err) => reject(err));
 });
 
-export default { getBoards };
+const getBoardById = (boardId) => axios.get(`${baseUrl}/boards/${boardId}.json`);
+
+export default { getBoards, getBoardById };
