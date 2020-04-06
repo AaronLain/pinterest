@@ -1,13 +1,20 @@
 import axios from 'axios';
-import apiKeys from '../apiKeys.json;
+import apiKeys from '../apiKeys.json';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
-const getFarmers = () => new Promise((resolve, reject) => {
+const getBoards= () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/boards.json`)
-  .then((response) => {
-    const zeBoards = response.data;
-    const boards = [];
-  })
-  .catch()
-})
+    .then((response) => {
+      const zeBoards = response.data;
+      const boards = [];
+      Object.keys(zeBoards).forEach((boardId) => {
+        zeBoards[boardId].id = boardId;
+        boards.push(zeBoards[boardId]);
+      });
+      resolve(boards)
+    })
+    .catch((err) => reject(err));
+});
+
+export default { getBoards };
