@@ -14,7 +14,7 @@ const init = () => {
   authData.checkLoginStatus();
   auth.loginButton();
   navBar.logoutEvent();
-  board.buildPins();
+  board.buildPins('board4');
   $('body').on('click', '.board-button', board.printSelectedBoard);
 };
 
