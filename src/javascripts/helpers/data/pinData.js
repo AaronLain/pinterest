@@ -8,7 +8,6 @@ const getPins = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/pins.json`)
     .then((response) => {
       const zePins = response.data;
-      console.error(zePins);
       const pins = [];
       if (zePins) {
         Object.keys(zePins).forEach((pinId) => {
@@ -16,12 +15,11 @@ const getPins = () => new Promise((resolve, reject) => {
           pins.push(zePins[pinId]);
         });
       }
-      console.error(pins, 'pins in getPins');
       resolve(pins);
     })
     .catch((err) => console.error('get Pins broke', reject(err)));
 });
 
-// const deletePin = (pinId) => axios.delete(`${baseUrl}/pins/${pinId}.json`);
+const deletePin = (pinId) => axios.delete(`${baseUrl}/pins/${pinId}.json`);
 
-export default { getPins };
+export default { getPins, deletePin };

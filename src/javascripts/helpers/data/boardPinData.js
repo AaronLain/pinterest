@@ -11,6 +11,7 @@ const getBoardPinByBoardId = (boardId) => new Promise((resolve, reject) => {
       const boardPins = [];
       Object.keys(zeBoardPins).forEach((boardPinId) => {
         zeBoardPins[boardPinId].id = boardPinId;
+        // const bPinId = zeBoardPins[boardPinId].pinId;
         boardPins.push(zeBoardPins[boardPinId]);
       });
       resolve(boardPins);
