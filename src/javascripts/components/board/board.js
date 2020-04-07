@@ -10,8 +10,9 @@ const buildPins = (boardId) => {
     smash.getBoardWithPins(boardId)
       .then((singleBoard) => {
         let domString = '';
+        const singleBoardName = singleBoard.name[0].toUpperCase() + singleBoard.name.slice(1);
         domString += `<div id="${singleBoard.id}" class="board-title">`;
-        domString += `<h2 class="text-center">${singleBoard.name}</h2>`;
+        domString += `<h2 class="text-center">${singleBoardName}</h2>`;
         domString += '<div class="d-flex flex-wrap" style="margin-left: 2rem;">';
         singleBoard.pins.forEach((pin) => {
           if (pin) domString += pinComponent.pinMaker(pin);
