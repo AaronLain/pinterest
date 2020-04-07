@@ -4,7 +4,6 @@ import apiKeys from '../apiKeys.json';
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
 const getPins = () => new Promise((resolve, reject) => {
-  console.error('axios get', `${baseUrl}/pins.json`);
   axios.get(`${baseUrl}/pins.json`)
     .then((response) => {
       const zePins = response.data;
