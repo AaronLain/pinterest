@@ -4,7 +4,7 @@ const pinMaker = (pin) => {
   domString += '<div class="card-body">';
   domString += `<h5 class="card-title">${pin.name}</h5>`;
   domString += `<img src=${pin.imageUrl} class="img-fluid"/>`;
-  // domString += '<button class="btn btn-danger delete-cow">Baleted</button>';
+  domString += '<button class="btn btn-danger delete-pin">X</button>';
   domString += '</div>';
   domString += '</div>';
 
