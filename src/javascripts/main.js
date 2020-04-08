@@ -5,6 +5,7 @@ import authData from './helpers/data/authData';
 import auth from './components/auth/auth';
 import navBar from './components/navBar';
 import board from './components/board/board';
+import newPin from './components/newPin/newPin';
 
 import '../styles/main.scss';
 import 'bootstrap';
@@ -16,6 +17,7 @@ const init = () => {
   navBar.logoutEvent();
   board.buildPins('board4');
   $('body').on('click', '.board-button', board.printSelectedBoard);
+  $('.add-button').click(newPin.newPinForm);
 };
 
 init();

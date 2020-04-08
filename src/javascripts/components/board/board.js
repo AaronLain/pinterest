@@ -1,9 +1,16 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import pinData from '../../helpers/data/pinData';
 import boardData from '../../helpers/data/boardData';
 import smash from '../../helpers/data/smash';
 import pinComponent from '../pins/pins';
 import utils from '../../helpers/utils';
 
+const getCurrentUid = () => {
+  const myUid = firebase.auth().currentUser.uid;
+  console.error(myUid);
+  boardData.getBoardsByUid(myUid).then().catch();
+};
 
 const buildPins = (boardId) => {
   boardData.getBoards().then(() => {
@@ -41,4 +48,4 @@ const printSelectedBoard = (e) => {
   buildPins(buttonId);
 };
 
-export default { buildPins, printSelectedBoard };
+export default { buildPins, printSelectedBoard, getCurrentUid };
