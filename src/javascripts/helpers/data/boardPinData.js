@@ -18,4 +18,6 @@ const getBoardPinByBoardId = (boardId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getBoardPinByBoardId };
+const addBoardPin = (newBoardPin) => axios.post(`${baseUrl}/boardPins.json`, newBoardPin);
+
+export default { getBoardPinByBoardId, addBoardPin };

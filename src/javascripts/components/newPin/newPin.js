@@ -14,7 +14,7 @@ const newPinForm = () => {
   domString += '</div>';
   domString += '<div class="form-group">';
   domString += '<label for="pin-image">Image Url</label>';
-  domString += '<input type="number" class="form-control" id="pin-image" placeholder="">';
+  domString += '<input type="text" class="form-control" id="pin-image" placeholder="">';
   domString += '</div>';
   domString += '<button type="submit" class="btn btn-dark" id="pin-creator">Add Pin</button>';
   domString += '</form>';

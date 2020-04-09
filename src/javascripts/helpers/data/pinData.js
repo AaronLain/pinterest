@@ -8,6 +8,7 @@ const getPins = () => new Promise((resolve, reject) => {
     .then((response) => {
       const zePins = response.data;
       const pins = [];
+      console.error(pins, 'pins');
       if (zePins) {
         Object.keys(zePins).forEach((pinId) => {
           zePins[pinId].id = pinId;
@@ -21,4 +22,6 @@ const getPins = () => new Promise((resolve, reject) => {
 
 const deletePin = (pinId) => axios.delete(`${baseUrl}/pins/${pinId}.json`);
 
-export default { getPins, deletePin };
+const addPin = (newPin) => axios.post(`${baseUrl}/pins.json`, newPin);
+
+export default { getPins, deletePin, addPin };
