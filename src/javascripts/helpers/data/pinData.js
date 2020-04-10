@@ -8,7 +8,7 @@ const getPins = () => new Promise((resolve, reject) => {
     .then((response) => {
       const zePins = response.data;
       const pins = [];
-      console.error(pins, 'pins');
+      console.error(pins, 'pins array getPins');
       if (zePins) {
         Object.keys(zePins).forEach((pinId) => {
           zePins[pinId].id = pinId;

@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import pinData from '../../helpers/data/pinData';
 import boardData from '../../helpers/data/boardData';
-// import boardPinData from '../../helpers/data/boardPinData';
+import boardPinData from '../../helpers/data/boardPinData';
 import smash from '../../helpers/data/smash';
 import pinComponent from '../pins/pins';
 import utils from '../../helpers/utils';
@@ -33,7 +33,8 @@ const buildPins = (boardId) => {
         domString += `<h2 class="text-center">${singleBoardName}</h2>`;
         domString += '<div class="d-flex flex-wrap" style="margin-left: 2rem;">';
         singleBoard.pins.forEach((pin) => {
-          if (pin) domString += pinComponent.pinMaker(pin);
+          if (pin && pin.id) domString += pinComponent.pinMaker(pin);
+          // console.error(domString);
         });
         domString += '</div>';
         domString += '</div>';
@@ -47,14 +48,19 @@ const buildPins = (boardId) => {
   });
 };
 
-// const makeABoardPin = (newPin) => {
-//   const newBoardPin = {
-//     pinId: `pin${newPin.length + 1}`,
-//     boardId: 'board4',
-//   };
-//   console.error(newBoardPin.id, 'newBoardPin.id');
-//   boardPinData.addBoardPin(newBoardPin);
-// };
+const makeABoardPin = () => {
+  const boardPinArray = Array.from(Array(256).fill(42).map((x, y) => x + y));
+  const rand = (n) => Math.floor(Math.random() * n.length);
+  console.error(rand(boardPinArray));
+  const newBoardPin = {
+    pinId: `pin${rand(boardPinArray)}`,
+    boardId: 'board4',
+  };
+  console.error(newBoardPin.pinId, 'newBoardPin.pinId');
+  boardPinData.addBoardPin(newBoardPin)
+    .then(() => buildPins('board4'))
+    .catch((err) => console.error('MakeABoardPin broke', err));
+};
 
 const makeAPin = (e) => {
   e.preventDefault();
@@ -64,7 +70,7 @@ const makeAPin = (e) => {
     imageUrl: $('#pin-image').val(),
   };
   console.error(newPin.id, 'newPin.id');
-  pinData.addPin(newPin).then(() => buildPins('board4'))
+  pinData.addPin(newPin).then(() => makeABoardPin())
     .catch((err) => console.error('addPin broke', err));
 };
 
