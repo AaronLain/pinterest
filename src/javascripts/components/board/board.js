@@ -22,10 +22,10 @@ const removePin = (e) => {
 const buildSingleBoardWithPins = (boardId) => {
   smash.getBoardWithPins(boardId)
     .then((singleBoard) => {
+      console.error(singleBoard, 'singleboard');
       let domString = '';
-      const singleBoardName = singleBoard.name[0].toUpperCase() + singleBoard.name.slice(1);
-      domString += `<div id="${singleBoard.id}" class="board-title d-flex flex-column">`;
-      domString += `<button style="align-self: center; width: 33%; margin: 2em auto 2em;" id="${singleBoard.id}" class="btn btn-primary"><h2>${singleBoardName}</h2></button>`;
+      // const singleBoardName = singleBoard.name[0].toUpperCase() + singleBoard.name.slice(1);
+      domString += `<button style="align-self: center; width: 33%; margin: 2em auto 2em;" id="${singleBoard.id}" class="btn btn-primary board-button"></button>`;
       domString += '<div class="d-flex flex-wrap justify-content-center" style="margin: 2rem;">';
       singleBoard.pins.forEach((pin) => {
         if (pin) domString += pinComponent.pinMaker(pin);
@@ -37,6 +37,19 @@ const buildSingleBoardWithPins = (boardId) => {
       return boardId;
     })
     .catch((err) => console.error('buildPins broken', err));
+};
+
+const printOnlySelectedBoard = (e) => {
+  const selectedBoard = e.target.id;
+  console.error(selectedBoard);
+  let domString = '';
+  utils.printToDom('board', '');
+  domString += '<div id="board1" class=""></div>';
+  domString += '<div id="board2" class=""></div>';
+  domString += '<div id="board3" class=""></div>';
+  domString += '<div id="board4" class=""></div>';
+  utils.printToDom('board', domString);
+  buildSingleBoardWithPins(`${selectedBoard}`);
 };
 
 const buildAllBoards = () => {
@@ -65,6 +78,7 @@ export default {
   buildAllBoards,
   buildSingleBoardWithPins,
   getCurrentUid,
+  printOnlySelectedBoard,
   makeAPin,
   removePin,
 };

@@ -19,6 +19,7 @@ const init = () => {
   $('.add-button').click(newPin.newPinForm);
   $('body').on('click', '#pin-creator', board.makeAPin);
   $('body').on('click', '.delete-pin', board.removePin);
+  $('body').on('click', '.board-button', board.printOnlySelectedBoard);
 };
 
 init();
