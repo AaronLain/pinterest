@@ -1,4 +1,5 @@
 const pinMaker = (pin) => {
+  console.error(pin, 'pinMaker pin');
   let domString = '';
   domString += `<div class="card col-3" id="${pin.id}">`;
   domString += '<div class="card-body">';
