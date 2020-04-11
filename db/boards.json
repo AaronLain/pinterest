@@ -1,18 +1,18 @@
 {
   "board1": {
     "name": "dessert",
-    "pins": ["hello"]
+    "uid": "gRC1ecMEn8RiKerv76UuaTdzmLE2"
   },
   "board2": {
     "name": "vegetable",
-    "pins": ["yes?"]
+    "uid": "gRC1ecMEn8RiKerv76UuaTdzmLE2"
   },
   "board3": {
     "name": "cereal",
-    "pins": ["nvm"]
+    "uid": "gRC1ecMEn8RiKerv76UuaTdzmLE2"
   },
   "board4": {
-    "name": "all",
-    "pins": ["k"]
+    "name": "cats",
+    "uid": "123456"
   }
 }

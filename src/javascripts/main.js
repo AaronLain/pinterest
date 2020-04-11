@@ -15,10 +15,10 @@ const init = () => {
   authData.checkLoginStatus();
   auth.loginButton();
   navBar.logoutEvent();
-  board.buildPins('board4');
-  $('body').on('click', '.board-button', board.printSelectedBoard);
+  board.buildAllBoards();
   $('.add-button').click(newPin.newPinForm);
   $('body').on('click', '#pin-creator', board.makeAPin);
+  $('body').on('click', '.delete-pin', board.removePin);
 };
 
 init();

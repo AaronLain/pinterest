@@ -16,6 +16,18 @@ const newPinForm = () => {
   domString += '<label for="pin-image">Image Url</label>';
   domString += '<input type="text" class="form-control" id="pin-image" placeholder="">';
   domString += '</div>';
+  domString += '<div class="form-check">';
+  domString += '<input class="form-check-input" type="radio" name="boardRadios" id="boardRadios" value="board1">';
+  domString += '<label class="form-check-label" for="boardRadios">Desserts</div>';
+  domString += '<div class="form-check">';
+  domString += '<input class="form-check-input" type="radio" name="boardRadios" id="boardRadios" value="board2">';
+  domString += '<label class="form-check-label" for="boardRadios">Vegetables</div>';
+  domString += '<div class="form-check">';
+  domString += '<input class="form-check-input" type="radio" name="boardRadios" id="boardRadios" value="board3">';
+  domString += '<label class="form-check-label" for="boardRadios">Cereal</div>';
+  domString += '<div class="form-check">';
+  domString += '<input class="form-check-input" type="radio" name="boardRadios" id="boardRadios" value="board4">';
+  domString += '<label class="form-check-label" for="boardRadios">Cats</div>';
   domString += '<button type="submit" class="btn btn-dark" id="pin-creator">Add Pin</button>';
   domString += '</form>';
 
