@@ -5,6 +5,7 @@ import boardData from '../../helpers/data/boardData';
 import smash from '../../helpers/data/smash';
 import pinComponent from '../pins/pins';
 import utils from '../../helpers/utils';
+import editPin from '../editPin/editPin';
 
 const getCurrentUid = () => {
   const myUid = firebase.auth().currentUser.uid;
@@ -77,6 +78,29 @@ const makeAPin = (e) => {
     .catch((err) => console.error('addPin broke', err));
 };
 
+const editPinEvent = (e) => {
+  e.preventDefault();
+  const pinId = e.target.closest('.card').id;
+  console.error(pinId, 'edit Pin event pinId');
+  editPin.editPinModalForm(pinId);
+};
+
+const modifyPin = (e) => {
+  e.preventDefault();
+  const selectedBoard = $("input[name='editBoardRadios']:checked").val();
+  const pinId = e.target.closest('.edit-pin-form').id;
+  console.error(pinId, 'modify pin pinId');
+  const modifiedPin = {
+    name: $('#edit-pin-name').val(),
+    imageUrl: $('#edit-pin-image').val(),
+    boardId: `${selectedBoard}`,
+  };
+  console.error(modifiedPin, 'modified Pin');
+  pinData.updatePin(pinId, modifiedPin)
+    .then(() => buildAllBoards())
+    .catch((err) => console.error('Modify Pin Broke', err));
+};
+
 export default {
   buildAllBoards,
   buildSingleBoardWithPins,
@@ -84,4 +108,6 @@ export default {
   printOnlySelectedBoard,
   makeAPin,
   removePin,
+  editPinEvent,
+  modifyPin,
 };
