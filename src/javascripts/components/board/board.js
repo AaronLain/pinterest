@@ -24,8 +24,11 @@ const buildSingleBoardWithPins = (boardId) => {
     .then((singleBoard) => {
       console.error(singleBoard, 'singleboard');
       let domString = '';
-      // const singleBoardName = singleBoard.name[0].toUpperCase() + singleBoard.name.slice(1);
-      domString += `<button style="align-self: center; width: 33%; margin: 2em auto 2em;" id="${singleBoard.id}" class="btn btn-primary board-button"></button>`;
+      const singleBoardName = singleBoard.name[0].toUpperCase() + singleBoard.name.slice(1);
+      domString += `<h2>${singleBoardName}</h2>`;
+      domString += `<button style="width: 33%; margin: 2em auto 2em;" id="${singleBoard.id}" 
+                    class="btn btn-primary board-button d-flex justify-content-center">
+                    Show ${singleBoardName} Only</button>`;
       domString += '<div class="d-flex flex-wrap justify-content-center" style="margin: 2rem;">';
       singleBoard.pins.forEach((pin) => {
         if (pin) domString += pinComponent.pinMaker(pin);
