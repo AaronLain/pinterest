@@ -45,7 +45,6 @@ const buildSingleBoardWithPins = (boardId) => {
 
 const printOnlySelectedBoard = (e) => {
   const selectedBoard = e.target.id;
-  console.error(selectedBoard);
   let domString = '';
   utils.printToDom('board', '');
   domString += '<div id="board1" class=""></div>';
@@ -62,7 +61,6 @@ const buildAllBoards = () => {
   buildSingleBoardWithPins('board3');
   buildSingleBoardWithPins('board4');
 };
-
 
 const makeAPin = (e) => {
   e.preventDefault();
@@ -81,7 +79,6 @@ const makeAPin = (e) => {
 const editPinEvent = (e) => {
   e.preventDefault();
   const pinId = e.target.closest('.card').id;
-  console.error(pinId, 'edit Pin event pinId');
   editPin.editPinModalForm(pinId);
 };
 
@@ -89,13 +86,11 @@ const modifyPin = (e) => {
   e.preventDefault();
   const selectedBoard = $("input[name='editBoardRadios']:checked").val();
   const pinId = e.target.closest('.edit-pin-form').id;
-  console.error(pinId, 'modify pin pinId');
   const modifiedPin = {
     name: $('#edit-pin-name').val(),
     imageUrl: $('#edit-pin-image').val(),
     boardId: `${selectedBoard}`,
   };
-  console.error(modifiedPin, 'modified Pin');
   pinData.updatePin(pinId, modifiedPin)
     .then(() => buildAllBoards())
     .catch((err) => console.error('Modify Pin Broke', err));

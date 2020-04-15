@@ -5,7 +5,6 @@ const editPinModalForm = (pinId) => {
   pinData.getSinglePin(pinId)
     .then((resp) => {
       const pin = resp.data;
-      console.error(pinId);
       let domString = '';
       domString += '<h2 class="text-center">Edit Pin</h2>';
       domString += `<form class="col-10 offset-1 edit-pin-form" id=${pinId}>`;
