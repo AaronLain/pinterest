@@ -8,7 +8,6 @@ const getPins = (boardId) => new Promise((resolve, reject) => {
     .then((response) => {
       const zePins = response.data;
       const pins = [];
-      console.error(pins, 'pins array getPins');
       if (zePins) {
         Object.keys(zePins).forEach((pinId) => {
           zePins[pinId].id = pinId;
@@ -20,8 +19,18 @@ const getPins = (boardId) => new Promise((resolve, reject) => {
     .catch((err) => console.error('get Pins broke', reject(err)));
 });
 
+const getSinglePin = (pinId) => axios.get(`${baseUrl}/pins/${pinId}.json`);
+
 const deletePin = (pinId) => axios.delete(`${baseUrl}/pins/${pinId}.json`);
 
 const addPin = (newPin) => axios.post(`${baseUrl}/pins.json`, newPin);
 
-export default { getPins, deletePin, addPin };
+const updatePin = (pinId, modifiedPin) => axios.put(`${baseUrl}/pins/${pinId}.json`, modifiedPin);
+
+export default {
+  getPins,
+  deletePin,
+  addPin,
+  getSinglePin,
+  updatePin,
+};
